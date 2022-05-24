@@ -1,0 +1,287 @@
+@import url("https://fonts.googleapis.com/css?family=Exo:400,700");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Exo", sans-serif;
+}
+
+body,
+html {
+  width: 100%;
+  min-height: 100vh;
+  overflow: auto;
+  background-color: rgb(255, 255, 255);
+}
+
+.Home {
+  position: relative;
+  background-image: radial-gradient(
+    farthest-corner at 40px 40px,
+    #50c5ee 60%,
+    rgba(0, 212, 255, 0.5) 100%
+  );
+  min-height: calc(100vh - 60px);
+  margin: 15px;
+  padding: 15px;
+  border-radius: 20px;
+  color: black;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+}
+
+.Home > h2 {
+  display: flex;
+  justify-content: space-around;
+  color: rgb(0, 0, 0);
+  margin-top: 2rem;
+}
+
+.Home > .PesquisarPaleta {
+  display: flex;
+  justify-content: center;
+  color: rgb(0, 0, 0);
+}
+
+.Home > .Home__container {
+  display: flex;
+  justify-content: center;
+  color: rgb(0, 0, 0);
+}
+
+.Home__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 350px) {
+  .Home__container {
+    justify-content: unset;
+  }
+}
+
+.PaletaLista {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 25px 50px;
+}
+
+@media (max-width: 1220px) {
+  .PaletaLista {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 840px) {
+  .PaletaLista {
+    grid-template-columns: 1fr;
+  }
+}
+
+.CartaoPaleta {
+  font-family: "Exo";
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  padding: 10px;
+  width: 315px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.CartaoPaleta {
+  margin: 20px 0;
+  height: 150px;
+}
+
+@media (max-width: 400px) {
+  .CartaoPaleta,
+  .CartaoPaleta__infos {
+    width: 210px;
+    height: 180px;
+  }
+}
+
+.CartaoPaleta > div,
+.CartaoPaleta__infos > div {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.CartaoPaleta__infos > h4 {
+  font-size: 1.5em;
+  font-weight: 700;
+  line-height: 100%;
+}
+
+.CartaoPaleta__infos > p {
+  font-size: 0.85em;
+}
+
+.CartaoPaleta__infos > span {
+  color: darkviolet;
+}
+
+.CartaoPaleta > img {
+  height: 150px;
+  margin-right: -60px;
+}
+
+.Header {
+  width: calc(60vw - 60px);
+  height: 12vh;
+  align-items: center;
+  padding: 0 20vw;
+}
+
+.Header > .Header__container {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.Header > .Header__container > div {
+  display: flex;
+  align-items: center;
+  font-size: x-large;
+  background-color: #ffffff4d;
+  width: 16vw;
+  height: 7vh;
+  border-radius: 10px;
+  position: relative;
+}
+
+.Header > .Header__container > div > img {
+  position: absolute;
+  left: -25px;
+  top: -10px;
+}
+
+.Header > .Header__container > div > h2 {
+  position: absolute;
+  left: 50px;
+}
+
+.MensagemDeErro {
+  color: red;
+  margin: 2rem;
+  font-size: larger;
+}
+
+.PesquisarPaleta {
+  width: calc(20vw - 60px);
+  padding: 0 40vw;
+}
+
+.PesquisarPaleta > .PesquisarPaleta__container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.PesquisarPaleta > .PesquisarPaleta__container > input {
+  border: none;
+  margin: 1rem 0;
+  padding: 8px 6px;
+  border-radius: 3px;
+}
+
+.botao-padrao {
+  background-color: transparent;
+  border-radius: 3px;
+  border: 2px solid #9400d3;
+  color: #9400d3;
+  font-size: larger;
+  font-weight: 700;
+  height: 33px;
+  cursor: pointer;
+}
+
+.botao-cadastro {
+  padding: 0.1rem 5rem;
+  font-size: medium;
+}
+
+.botao-padrao:hover {
+  color: #50c5ee;
+  background-color: #9400d3;
+}
+
+.NovaPaleta__container {
+  width: 100%;
+  height: 5vh;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.fundo-modal {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #0000004d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fundo-modal > .modal {
+  width: 30vw;
+  height: 36vh;
+  background-color: white;
+  border-radius: 20px;
+}
+
+.fundo-modal > .modal > .cabecalho-modal {
+  width: calc(100% - 40px);
+  height: 7vh;
+  background-color: #50c5ee;
+  border-radius: 20px 20px 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  user-select: none;
+}
+
+.fundo-modal > .modal > .cabecalho-modal > span {
+  cursor: pointer;
+}
+
+.fundo-modal > .modal > .corpo-modal {
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 14px);
+  padding: 0 7px;
+  align-items: center;
+}
+
+.fundo-modal > .modal > .corpo-modal > input {
+  width: calc(100% - 14px);
+  border: 1px solid #0000002d;
+  border-radius: 5px;
+  padding: 7px;
+  margin-top: 7px;
+}
+
+.fundo-modal > .modal > .corpo-modal > .input-descricao {
+  height: 8vh;
+}
+
+.fundo-modal > .modal > .corpo-modal > button {
+  width: 9vw;
+  height: 4vh;
+  margin-top: 7px;
+  border: 1px solid #50c5ee;
+  color: #50c5ee;
+  background-color: transparent;
+  border-radius: 5px;
+}
+
+.fundo-modal > .modal > .corpo-modal > button:hover {
+  color: white;
+  background-color: #50c5ee;
+}
